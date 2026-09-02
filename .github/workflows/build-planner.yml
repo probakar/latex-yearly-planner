@@ -37,7 +37,7 @@ jobs:
           NAME: my_olive_planner_${{ github.event.inputs.year || '2027' }}
         run: |
           chmod +x single.sh
-          ./single.sh
+          ./single.sh || (cat out/*.log && exit 1)
           cp "${NAME}.pdf" out/
 
       - name: Upload PDF artifact
