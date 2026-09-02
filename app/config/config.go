@@ -57,6 +57,7 @@ type RenderBlock struct {
 }
 
 type Colors struct {
+	Primary   string
 	Gray      string
 	LightGray string
 }

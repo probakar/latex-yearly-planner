@@ -55,5 +55,6 @@ layout:
     dailyspring: \textcolor{white}{.}
 
   colors:
-    gray: gray
-    lightgray: gray!50
+    primary: deepolive
+    gray: mediumolive
+    lightgray: softolive

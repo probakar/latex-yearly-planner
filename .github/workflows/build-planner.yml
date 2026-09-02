@@ -1,0 +1,43 @@
+name: Build Yearly Planner
+
+on:
+  workflow_dispatch:
+    inputs:
+      year:
+        description: 'Planner year'
+        required: true
+        default: '2027'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-full
+
+      - name: Build planner PDF
+        env:
+          PLANNER_YEAR: ${{ github.event.inputs.year }}
+          PASSES: 2
+          CFG: cfg/base.yaml,cfg/rm2.base.yaml,cfg/template_months_on_side.yaml,cfg/rm2.mos.default.yaml
+          NAME: my_olive_planner_${{ github.event.inputs.year }}
+        run: |
+          chmod +x single.sh
+          ./single.sh
+          cp "${NAME}.pdf" out/
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: planner-pdf
+          path: out/*.pdf
