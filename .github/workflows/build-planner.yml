@@ -12,6 +12,9 @@ on:
       - 'arena/*'
       - 'main'
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -45,3 +48,16 @@ jobs:
         with:
           name: planner-pdf
           path: out/*.pdf
+
+      - name: Publish PDFs to branch (arena only)
+        if: startsWith(github.ref, 'refs/heads/arena/')
+        run: |
+          mkdir -p ref deliver
+          cp out/*.pdf ref/ 2>/dev/null || true
+          mv ref/my_olive_planner_2027.pdf ref/reference_planner_2027.pdf 2>/dev/null || true
+          cp out/*.pdf deliver/ 2>/dev/null || true
+          git config user.name "arena-ai-coding-agent[bot]"
+          git config user.email "298482267+arena-ai-coding-agent[bot]@users.noreply.github.com"
+          git add -f ref/*.pdf deliver/*.pdf
+          git commit -m "Build planner PDFs via CI [skip ci]" || echo "nothing new to commit"
+          git push
