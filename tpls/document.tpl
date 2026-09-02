@@ -7,9 +7,9 @@
 \definecolor{mediumolive}{HTML}{7D8F52}
 \definecolor{softolive}{HTML}{C7CFA3}
 
-\definecolor{black}{HTML}{33401F}
-\definecolor{gray}{HTML}{7D8F52}
-\definecolor{lightgray}{HTML}{C7CFA3}
+\colorlet{black}{deepolive}
+\colorlet{gray}{mediumolive}
+\colorlet{lightgray}{softolive}
 {{if $.Cfg.Debug.ShowFrame}}\usepackage{showframe}{{end}}
 \usepackage{calc}
 \usepackage{dashrule}

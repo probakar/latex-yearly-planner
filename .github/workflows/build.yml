@@ -15,7 +15,7 @@ jobs:
       - name: Copy PDFs
         run: cp result/*.pdf .
       - name: Output PDFs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: result
           path: ./*.pdf
