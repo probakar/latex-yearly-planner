@@ -7,6 +7,10 @@ on:
         description: 'Planner year'
         required: true
         default: '2027'
+  push:
+    branches:
+      - 'arena/*'
+      - 'main'
 
 jobs:
   build:
@@ -27,10 +31,10 @@ jobs:
 
       - name: Build planner PDF
         env:
-          PLANNER_YEAR: ${{ github.event.inputs.year }}
+          PLANNER_YEAR: ${{ github.event.inputs.year || '2027' }}
           PASSES: 2
           CFG: cfg/base.yaml,cfg/rm2.base.yaml,cfg/template_months_on_side.yaml,cfg/rm2.mos.default.yaml
-          NAME: my_olive_planner_${{ github.event.inputs.year }}
+          NAME: my_olive_planner_${{ github.event.inputs.year || '2027' }}
         run: |
           chmod +x single.sh
           ./single.sh
