@@ -2,6 +2,14 @@
 
 \usepackage{geometry}
 \usepackage[table]{xcolor}
+
+\definecolor{deepolive}{HTML}{33401F}
+\definecolor{mediumolive}{HTML}{7D8F52}
+\definecolor{softolive}{HTML}{C7CFA3}
+
+\definecolor{black}{HTML}{33401F}
+\definecolor{gray}{HTML}{7D8F52}
+\definecolor{lightgray}{HTML}{C7CFA3}
 {{if $.Cfg.Debug.ShowFrame}}\usepackage{showframe}{{end}}
 \usepackage{calc}
 \usepackage{dashrule}
@@ -46,6 +54,7 @@
 \fboxsep0pt
 
 \begin{document}
+\color{black}
 
 {{template "macro.tpl" .}}
 

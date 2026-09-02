@@ -59,6 +59,7 @@
 \newcommand{\myQuarterlySpring}{ {{- $lengths.QuarterlySpring -}} }
 \newcommand{\myMonthlySpring}{ {{- $lengths.MonthlySpring -}} }
 \newcommand{\myDailySpring}{ {{- $lengths.DailySpring -}} }
+\newcommand{\myColorPrimary}{ {{- .Cfg.Layout.Colors.Primary -}} }
 \newcommand{\myColorGray}{ {{- .Cfg.Layout.Colors.Gray -}} }
 \newcommand{\myColorLightGray}{ {{- .Cfg.Layout.Colors.LightGray -}} }
 
@@ -76,7 +77,7 @@
 \newcommand{\myTodo}{\myLineHeightButLine$\square$\myLinePlain}
 \newcommand{\myTodoLineGray}{\myLineHeightButLine$\square$\myLineGray}
 
-\newcommand{\myDotGrid}[2]{\leavevmode\multido{\dC=0mm+5mm}{#1}{\multido{\dR=0mm+5mm}{#2}{\put(\dR,\dC){\circle*{0.1}}}}}
+\newcommand{\myDotGrid}[2]{{\color{\myColorLightGray}\leavevmode\multido{\dC=0mm+5mm}{#1}{\multido{\dR=0mm+5mm}{#2}{\put(\dR,\dC){\circle*{0.1}}}}}}
 
 \newcommand{\myMash}[3][]{
   {{- if $.Cfg.Dotted -}} \vskip\myLenLineHeightButLine#1\myDotGrid{#2}{#3} {{- else -}} \Repeat{#2}{\myLineGrayVskipTop} {{- end -}}
