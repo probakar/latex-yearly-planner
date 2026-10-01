@@ -1,0 +1,5 @@
+October 2026 Monday slot30: weeks=5  W5 banner=''  title='October 2026  ·  Oct 1 - Oct 4'
+February 2026 Sunday slot30: weeks=4  W5 banner='This week is not used in February.'  title='February 2026  ·  Feb 1 - Feb 7'
+March 2026 Monday slot45: weeks=6  W5 banner=''  title='March 2026  ·  Mar 1 - Mar 1'
+February 2024 Sunday slot60: weeks=5  W5 banner=''  title='February 2024  ·  Feb 1 - Feb 3'
+RESULT: ALL PASS
