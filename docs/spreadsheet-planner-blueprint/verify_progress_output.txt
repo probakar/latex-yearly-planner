@@ -1,0 +1,26 @@
+ok   A7 0 expected 0
+ok   D7 0.0 expected 0
+ok   G7 0.6666666666666666 expected 0.6666666666666666
+ok   J7 1.0 expected 1.0
+ok   M7 1.0 expected 1.0
+ok   I12 0.42857142857142855 expected 0.42857142857142855
+ok   I13 1.0 expected 1.0
+ok   I14 '' expected ''
+ok   I15 0.0 expected 0.0
+ok   A17 0.47619047619047616 expected 0.47619047619047616
+ok   B17 0.6666666666666666 expected 0.6666666666666666
+ok   B20 0.6 expected 0.6
+ok   B21 '' expected ''
+ok   B22 1 expected 1.0
+ok   B23 0 expected 0.0
+ok   B24 0 expected 0.0
+ok   B25 1 expected 1.0
+ok   C20 '██████░░░░' expected '██████░░░░'
+ok   A27 np.float64(5.0) expected 5.0
+ok   A28 np.float64(25.0) expected 25
+ok   A29 5 expected 5
+ok   A31 0 expected 0
+ok   A38 5.0 expected 5
+ok   A39 0 expected 0
+ok   M37 3.0 expected 3
+RESULT: ALL PASS
